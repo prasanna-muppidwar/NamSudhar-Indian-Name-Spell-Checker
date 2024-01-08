@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namसुधार : Indian Name Spell Checker</title>
+    <link rel="icon" href="/images/NaaMसुधार..png" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/NaaMसुधार..png" type="image/x-icon">
+  
+    
+    <style>
+        *{
+            font-family: 'Poppins', sans-serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 20px;
+            text-align: center;
+        }
+
+        img {
+            height: 100px;
+        }
+
+        p {
+           color: #6c757d;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .input {
+            border: 2px solid #ffc505;
+            border-radius: 8px;
+            padding: 10px;
+            width: 300px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: white;
+            background-color: #171717;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #edc70c;
+        }
+
+        button span {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+            height: 15px;
+            width: 15px;
+            background-color: #0c66ed;
+            border-radius: 50%;
+            transition: transform 0.6s ease;
+        }
+
+        button:hover span {
+            transform: scale(4);
+        }
+
+        p.suggestions {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+ <img src="/images/NaaMसुधार..png" alt="">
+    <p>Namसुधार: Perfecting the Art of Indian Names - Your Gateway to Flawless Spellings, 
+    <br>Celebrating Cultural Precision in Every Letter</p>
+
+    <form method="post" action="/">
+        <label for="input_name">Enter Name:</label>
+        <input type="text" id="input_name" name="input_name" class="input" required placeholder="Enter Your Incorrect Name Spell!">
+        <button type="submit">
+            Submit
+        </button>
+    </form>
+
+    {% if suggestions %}
+        <p class="suggestions">Suggestions: {{ suggestions|join(', ') }}</p>
+    {% endif %}
+
+    <p>With Love by @prasanna_muppidwar</p>
+
+</body>
+</html>

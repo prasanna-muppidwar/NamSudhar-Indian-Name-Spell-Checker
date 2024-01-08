@@ -1,6 +1,7 @@
-# app.py
-import streamlit as st
+from flask import Flask, render_template, request
 import pandas as pd
+
+app = Flask(__name__)
 
 # Function to calculate Levenshtein distance
 def levenshtein_distance(str1, str2):
@@ -28,23 +29,18 @@ def suggest_corrections(incorrect_name, correct_names_column):
     return suggestions[:3]
 
 # Load the CSV data
-csv_path = 'data/All-Indian-Names.csv'
+csv_path = 'All-Indian-Names.csv'
 all_names_df = pd.read_csv(csv_path)
 
-# Streamlit app
-def main():
-    st.title("IndianSpell Checker")
-    st.text("With Love by @prasanna_muppidwar")
-    # Form for user input
-    input_name = st.text_input("Enter Name:")
-    add_button = st.button("Add Name")
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-    if add_button:
-        # Spell check the input name and get suggestions
-        suggestions = suggest_corrections(input_name, all_names_df['name'])
-
-        # Display suggestions
-        st.write("Suggestions:", ", ".join(suggestions))
+@app.route('/', methods=['POST'])
+def process_input():
+    input_name = request.form.get('input_name')
+    suggestions = suggest_corrections(input_name, all_names_df['name'])
+    return render_template('index.html', suggestions=suggestions)
 
 if __name__ == '__main__':
-    main()
+    app.run(debug=True)
