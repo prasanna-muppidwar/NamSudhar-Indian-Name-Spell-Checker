@@ -1,107 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Namसुधार : Indian Name Spell Checker</title>
-    <link rel="icon" href="/images/NaaMसुधार..png" type="image/x-icon">
-    <link rel="shortcut icon" href="/images/NaaMसुधार..png" type="image/x-icon">
-  
-    
+    <link rel="icon" href="/images/NaaMसुधार..png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="/images/NaaMसुधार..png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
     <style>
-        *{
-            font-family: 'Poppins', sans-serif;
-        }
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #ffffff;
-            color: #333;
-            margin: 20px;
-            text-align: center;
-        }
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+      body {
+        height: 95vh;
+        font-family: "Arial", sans-serif;
+        background-color: #100226;
+        background-image: url(./images/Desktop\ -\ 1.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #ffffff;
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        align-items: center;
+        position: relative;
+        -sb-track-color: #100226;
+        --sb-thumb-color: #100226;
+        --sb-size: 10px;
 
-        img {
-            height: 100px;
-        }
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+      }
+      body::-webkit-scrollbar {
+        width: var(--sb-size);
+      }
 
-        p {
-           color: #6c757d;
-        }
+      body::-webkit-scrollbar-track {
+        background: var(--sb-track-color);
+        border-radius: 10px;
+      }
 
-        form {
-            margin-top: 20px;
-        }
+      body::-webkit-scrollbar-thumb {
+        background: var(--sb-thumb-color);
+        border-radius: 10px;
+      }
+      img {
+        height: 100px;
+      }
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
+      p {
+        color: #ffffff;
+      }
 
-        .input {
-            border: 2px solid #ffc505;
-            border-radius: 8px;
-            padding: 10px;
-            width: 300px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-        }
+      form {
+        margin-top: 20px;
+      }
 
-        button {
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: bold;
-            color: white;
-            background-color: #171717;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
 
-        button:hover {
-            background-color: #edc70c;
-        }
+      .input {
+        border: 2px solid #ffc505;
+        border-radius: 8px;
+        padding: 10px;
+        width: 300px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
 
-        button span {
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: 5px;
-            height: 15px;
-            width: 15px;
-            background-color: #0c66ed;
-            border-radius: 50%;
-            transition: transform 0.6s ease;
-        }
+      button {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        color: white;
+        background-color: #171717;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
 
-        button:hover span {
-            transform: scale(4);
-        }
+      button:hover {
+        background-color: #edc70c;
+      }
 
-        p.suggestions {
-            margin-top: 10px;
-        }
+      button span {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+        height: 15px;
+        width: 15px;
+        background-color: #0c66ed;
+        border-radius: 50%;
+        transition: transform 0.6s ease;
+      }
+
+      button:hover span {
+        transform: scale(4);
+      }
+
+      p.suggestions {
+        margin-top: 10px;
+      }
+
+      nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        color: white;
+      }
+
+      .logo img {
+        height: 70px;
+      }
+      .nav-links ul {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+      }
+      .nav-links ul li {
+        list-style: none;
+      }
+      .nav-links ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        font-weight: normal;
+      }
+
+      .copyright {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .heading {
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        width: 60%;
+        text-align: center;
+        padding-top: 100px;
+      }
     </style>
-</head>
-<body>
- <img src="/images/NaaMसुधार..png" alt="">
-    <p>Namसुधार: Perfecting the Art of Indian Names - Your Gateway to Flawless Spellings, 
-    <br>Celebrating Cultural Precision in Every Letter</p>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img
+          src="https://raw.githubusercontent.com/pawanbhayde/NamSudhar-Indian-Name-Spell-Checker/main/images/NaaM%E0%A4%B8%E0%A5%81%E0%A4%A7%E0%A4%BE%E0%A4%B0..png"
+          alt="Namसुधार Logo"
+        />
+      </div>
+      <div class="nav-links">
+        <ul>
+          <li><a href="/">About</a></li>
+          <li><a href="/">Connect</a></li>
+          <li><a href="/">LinkedIn</a></li>
+        </ul>
+      </div>
+    </nav>
+    <h1 class="heading">
+      Namसुधार: Perfecting the Art of Indian Names - Your Gateway to Flawless
+      Spellings, Celebrating Cultural Precision in Every Letter
+    </h1>
 
     <form method="post" action="/">
-        <label for="input_name">Enter Name:</label>
-        <input type="text" id="input_name" name="input_name" class="input" required placeholder="Enter Your Incorrect Name Spell!">
-        <button type="submit">
-            Submit
-        </button>
+      <label for="input_name">Enter Name:</label>
+      <input
+        type="text"
+        id="input_name"
+        name="input_name"
+        class="input"
+        required
+        placeholder="Enter Your Incorrect Name Spell!"
+      />
+      <button type="submit">Submit</button>
     </form>
 
     {% if suggestions %}
-        <p class="suggestions">Suggestions: {{ suggestions|join(', ') }}</p>
+    <p class="suggestions">Suggestions: {{ suggestions|join(', ') }}</p>
     {% endif %}
 
-    <p>With Love by @prasanna_muppidwar</p>
-
-</body>
+    <p class="copyright">With Love by @prasanna_muppidwar</p>
+  </body>
 </html>
