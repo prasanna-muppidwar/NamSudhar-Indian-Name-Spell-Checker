@@ -57,7 +57,7 @@ label {
   border: 2px solid #ffc505;
   border-radius: 8px;
   padding: 10px;
-  width: 300px;
+  width: 400px;
   margin-bottom: 10px;
   box-sizing: border-box;
 }
@@ -138,4 +138,12 @@ nav {
   width: 60%;
   text-align: center;
   padding-top: 100px;
+}
+
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 30px;
+    width: 80%;
+  }
 }
