@@ -1,7 +1,3 @@
-Certainly! Here's a sample README file for your Namसुधार (Indian Name Spell Checker) web application:
-
----
-
 # Namसुधार : Indian Name Spell Checker
 
 ![Namसुधार Logo](/images/NaaM%E0%A4%B8%E0%A5%81%E0%A4%A7%E0%A4%BE%E0%A4%B0..png)
